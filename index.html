@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co robię jak mi się nudzi? Nic mądrego!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 min-h-screen py-10 px-4 text-gray-800 font-sans">
+    <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl">
+        <div class="bg-gradient-to-r from-primary to-accent p-6">
+            <h1 class="text-3xl md:text-4xl font-bold text-white text-center tracking-tight">Guzik</h1>
+        </div>
+
+        <div class="p-6 md:p-8">
+            <div class="bg-blue-50 border-l-4 border-primary p-5 rounded-r mb-8 transition-all duration-300 hover:shadow-md">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Jak to działa:</h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-center">
+                        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white mr-2 text-sm">1</span>
+                        Kliknij przycisk jeden raz, aby zgasić lub zaświecić żarówkę
+                    </li>
+                    <li class="flex items-center">
+                        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-secondary text-white mr-2 text-sm">2</span>
+                        Kliknij przycisk dwa razy, aby odpalić TV
+                    </li>
+                    <li class="flex items-center">
+                        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-accent text-white mr-2 text-sm">3</span>
+                        Kliknij przycisk trzy razy (lub więcej), aby zakręcić kota
+                    </li>
+                    <li class="flex items-center">
+                        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-gray-500 text-white mr-2 text-sm">↺</span>
+                        Kliknij ponownie, aby przywrócić oryginalny kolor obrazka
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex justify-center mb-6">
+                <div class="bg-gray-100 px-6 py-3 rounded-full shadow-inner text-gray-700 font-medium flex items-center gap-2 transition-all hover:bg-gray-200">
+                    <span>Liczba kliknięć:</span>
+                    <span id="clickCounter" class="bg-white w-8 h-8 rounded-full inline-flex items-center justify-center font-bold text-primary shadow-sm">0</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="flex flex-col items-center group">
+                    <div class="bg-gray-100 p-4 rounded-xl w-full flex justify-center mb-3 transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+                        <img id="Lamp" src="LampOFF.svg" class="w-32 h-32 object-contain" />
+                    </div>
+                    <div class="font-medium text-center">
+                        <span class="inline-block bg-primary text-white text-xs rounded-full px-2 py-1 mr-1">1 kliknięcie</span>
+                        Lampka
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center group">
+                    <div class="bg-gray-100 p-4 rounded-xl w-full flex justify-center mb-3 transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+                        <img id="Tv" src="TVOff.svg" class="w-32 h-32 object-contain" />
+                    </div>
+                    <div class="font-medium text-center">
+                        <span class="inline-block bg-secondary text-white text-xs rounded-full px-2 py-1 mr-1">2 kliknięcia</span>
+                        TV
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center group">
+                    <div class="bg-gray-100 p-4 rounded-xl w-full flex justify-center mb-3 transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+                        <img id="Cat" src="cat.svg" class="w-32 h-32 object-contain" />
+                    </div>
+                    <div class="font-medium text-center">
+                        <span class="inline-block bg-accent text-white text-xs rounded-full px-2 py-1 mr-1">3 kliknięcia</span>
+                        Kot
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center mb-6">
+                <button id="myButton" class="relative w-48 h-48 bg-red-600 hover:bg-red-500 active:bg-red-700 text-white text-2xl font-bold rounded-full cursor-pointer shadow-lg transition-all duration-150 hover:-translate-y-1 active:translate-y-1 hover:shadow-red-300/50 shadow-xl flex items-center justify-center overflow-hidden group">
+                    <span class="absolute w-full h-full bg-red-500 rounded-full scale-0 group-hover:scale-75 transition-transform duration-300 opacity-30"></span>
+                    <span class="z-10">Kliknij mnie</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-8 text-center text-gray-500 text-sm">
+        © <span id="currentYear"></span> Pawluk Mateusz
+        <script>
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+
+</html>
+
+    <script src="button.js" ></script>
+
+</body>
+
+</html>
