@@ -1,3 +1,4 @@
+
 const canvas = document.getElementById('snakeCanvas');
 const ctx = canvas.getContext('2d');
 const startButton = document.getElementById('startSnake');
@@ -134,19 +135,24 @@ function showSaveScoreModal(score) {
 }
 
 function saveHighScore() {
-    const playerName = playerNameInput.value.trim() || 'Anonim';
+	const playerName = playerNameInput.value.trim().slice(0, 20) || 'Anonim';
 
-    const newScore = {
-        name: playerName,
-        score: score,
-        date: Date.now(),
-    };
+	const newScore = {
+		name: playerName,
+		score: Math.min(score, 9999),
+		date: Date.now()
+	};
 
-    scoresRef.push(newScore).then(() => {
-        saveScoreModal.classList.add('hidden');
-        loadHighScores();
-        highscoreModal.classList.remove('hidden');
-    });
+	scoresRef.push(newScore)
+		.then(() => {
+			saveScoreModal.classList.add('hidden');
+			loadHighScores();
+			highscoreModal.classList.remove('hidden');
+		})
+		.catch(error => {
+			console.error('Błąd zapisu wyniku:', error);
+			alert('Wystąpił błąd przy zapisie wyniku.');
+		});
 }
 
 function loadHighScores() {
