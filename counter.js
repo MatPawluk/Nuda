@@ -34,7 +34,6 @@ if (!hasVisited) {
 	localStorage.setItem('visited', 'true');
 }
 
-// Pobierz wartość licznika tylko raz (oszczędnie)
 counterRef
 	.get()
 	.then(snapshot => {
